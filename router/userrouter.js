@@ -14,7 +14,7 @@ userrouter.post(
               }
         ).catch(
               (error)=>{
-                console.log(error.message);
+                console.log(error.message,"err");
                
                  res.send(error.message)
               }

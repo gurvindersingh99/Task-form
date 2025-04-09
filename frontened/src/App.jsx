@@ -60,13 +60,12 @@ const submithandler = (e)=>{
      contact:e.target.contact.value,
      password:e.target.password.value
   }
-  // console.log(data,"data")
-  // console.log("Edit data ID: ", editdata?._id); 
+
 let response;
 if(editdata == null){
       response = axios.post('http://localhost:3000/product/register',data);
-}else{
-  // console.log("Sending PUT request to update user:", `http://localhost:3000/product/update/${editdata._id}`);
+}
+else{
     response = axios.put(`http://localhost:3000/product/update/${editdata._id}`,data)
 }
    
@@ -91,7 +90,7 @@ if(editdata == null){
 }
 
 const changestatus = (user_id)=>{
-  // console.log(`http://localhost:3000/product/status-changed/${user_id}`)
+  // console.log(http://localhost:3000/product/status-changed/${user_id})
    axios.patch(`http://localhost:3000/product/status-changed/${user_id}`)
    .then(
     (success)=>{
@@ -260,7 +259,7 @@ const Registerform =  (props)=>{
   contact
 </label>
 <input
-  type="tel"
+  type="number"
   id="contact"
   defaultValue={props.editdata?.contact}
   contact="contact"
